@@ -1,6 +1,7 @@
 package com.rcalderan.ListBackend.dto;
 
 import com.rcalderan.ListBackend.entities.Game;
+import com.rcalderan.ListBackend.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -32,5 +33,12 @@ public class GameMinDTO {
         title = entity.getTitle();
         year = entity.getYear();
         shortDescription = entity.getShortDescription();
+    }
+
+    public GameMinDTO(GameMinProjection projection) {
+        id = projection.getId();
+        title = projection.getTitle();
+        year = projection.getYear();
+        shortDescription = projection.getShortDescription();
     }
 }
